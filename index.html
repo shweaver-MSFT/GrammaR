@@ -1,0 +1,301 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license. -->
+<!-- See LICENSE in the project root for license information -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gramma R. Word Add-In</title>
+
+    <!-- Office JavaScript API -->
+    <!--<script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.debug.js"></script>-->
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+
+    <!-- LOCAL -->
+    <link rel="stylesheet" href="node_modules/office-ui-fabric-js/dist/css/fabric.min.css" />
+    <link rel="stylesheet" href="node_modules/office-ui-fabric-js/dist/css/fabric.components.css" />
+    <script src="external/FabricUI/MessageBanner.js" type="text/javascript"></script>
+
+    <!-- M365AddInToolkit -->
+    <script src="external/M365AddInToolkit/polyfill.js" type="text/javascript"></script>
+    <script src="external/M365AddInToolkit/WordDocumentManager.js" type="text/javascript"></script>
+
+    <!-- MDL2 icons -->
+    <link rel="stylesheet" href="external/mdl2-icons/css/mdl2-icons.min.css">
+
+    <!-- Template styles -->
+    <link href="src/css/app.css" rel="stylesheet" type="text/css" />
+    <link href="src/css/firstRun.css" rel="stylesheet" type="text/css" />
+    <link href="src/css/issues.css" rel="stylesheet" type="text/css" />
+    <link href="src/css/issueSettings.css" rel="stylesheet" type="text/css" />
+    <link href="src/css/appSettings.css" rel="stylesheet" type="text/css" />
+
+    <!-- Template logic -->
+    <script src="src/js/app.js" type="text/javascript"></script>
+    <script src="src/js/firstRun.js" type="text/javascript"></script>
+    <script src="src/js/issues.js" type="text/javascript"></script>
+    <script src="src/js/issueSettings.js" type="text/javascript"></script>
+    <script src="src/js/appSettings.js" type="text/javascript"></script>
+
+    <!-- CDN -->
+    <!-- For the Office UI Fabric, go to https://aka.ms/office-ui-fabric to learn more. -->
+    <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.1.0/fabric.min.css">
+    <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.1.0/fabric.components.min.css">
+    
+    <style>
+        #splashscreen .logo-image:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="splashscreen">
+        <img class="logo-image" src="assets/gramma.png" />
+        <div>Gramma R.</div>
+    </div>
+
+    <div id="contentroot"></div>
+
+    <script>
+        (function () {
+            var contentRoot = document.getElementById("contentroot");
+            contentRoot.classList.add("hidden");
+
+            document.querySelector("#splashscreen .logo-image").onclick = function () {
+                App.initialize();
+                contentRoot.classList.remove("hidden");
+            };
+        })();
+    </script>
+
+    <!-- FabricUI component used for displaying notifications -->
+    <div class="ms-MessageBanner hidden" id="notification-popup">
+        <div class="ms-MessageBanner-content">
+            <div class="ms-MessageBanner-text">
+                <div class="ms-MessageBanner-clipper">
+                    <div class="ms-font-m-plus ms-fontWeight-semibold" id="notification-header"></div>
+                    <div class="ms-font-m ms-fontWeight-semilight" id="notification-body"></div>
+                </div>
+            </div>
+            <button class="ms-MessageBanner-expand" style="display:none"><i class="ms-Icon ms-Icon--chevronsDown"></i> </button>
+            <div class="ms-MessageBanner-action"></div>
+        </div>
+        <button class="ms-MessageBanner-close"> <i class="ms-Icon ms-Icon--x"></i> </button>
+    </div>
+
+    <!-- Template for First Run view -->
+    <div id="first-run-template" class="first-run template">
+        <div class="scroll-panel">
+            <div>
+                <div class="skip-panel">
+                    <button class="skip-button">
+                        <div>
+                            <span>Skip</span>
+                            <span class="next-icon mdl2 mdl2-scroll-chevron-right-legacy"></span>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="logo-panel">
+                    <div>
+                        <img class="logo-image" src="assets/gramma.png" />
+                        <div class="logo-text">Gramma R. Add-in for Word</div>
+                    </div>
+                </div>
+
+                <div class="content-panel">
+                    <div class="title">You choose the writing issues Gramma will check</div>
+                    <div class="ux-image">
+                        <div></div>
+                    </div>
+                    <div class="description">
+                        <p>Once you launch the Gramma R. add-in, you can overview the current issues in your text.</p>
+                        <p>Click on the critical issues in the status bar to toggle a check type on.</p>
+                    </div>
+                </div>
+
+                <div class="navigation-buttons">
+                    <button class="next-button">Next</button>
+                    <button class="back-button">
+                        <span class="mdl2 mdl2-back"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Template for the IssueSettings view -->
+    <div id="issue-settings-template" class="issue-settings template">
+
+    </div>
+
+    <!-- Template for the Issues view -->
+    <div id="issues-template" class="issues template">
+        <div class="header">
+            <div class="header-content">
+                <div class="issue-counts">
+                    <div class="issue-count">
+                        <div class="critical-count">0</div>
+                        <div class="issue-count-text">critical issues</div>
+                    </div>
+                    <div class="issue-count">
+                        <div class="advanced-count">0</div>
+                        <div class="issue-count-text">advanced issues</div>
+                    </div>
+                </div>
+                <div class="scroll-nav">
+                    <button class="up-button">
+                        <span class="mdl2 mdl2-up"></span>
+                    </button>
+                    <button class="down-button">
+                        <span class="mdl2 mdl2-up mdl2-flip-vertical"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="expander-panel"></div>
+        </div>
+        <div class="issue-list"></div>
+        <div class="footer">
+            <div class="footer-content">
+                <div>
+                    <div class="loader-panel">
+                        <div class="loader"></div>
+                        <img src="assets/gramma.png" />
+                    </div>
+                    <div>
+                        <span>Gramma R.</span>
+                        <span class="accent">for Office</span>
+                    </div>
+                </div>
+                <button class="settings-button">
+                    <span class="mdl2 mdl2-settings"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Template for an IssueItem on the Issues view -->
+    <div id="issue-item-template" class="template issue-item">
+        <div class="content-panel">
+            <div>
+                <div class="icon"></div>
+                <div class="issue-content"></div>
+            </div>
+            <div class="issue-buttons">
+                <div class="expand mdl2 mdl2-scroll-chevron-down-legacy"></div>
+                <div class="close mdl2 mdl2-cancel"></div>
+            </div>
+        </div>
+        <div class="expander-panel collapsed">
+        </div>
+    </div>
+
+    <!-- Template for Spelling IssueItem content -->
+    <div id="spelling-issue-content-template" class="template spelling-issue-content">
+        <div>
+            <span class="mistake"></span>
+            <span class="mdl2 mdl2-chrome-back-mirrored arrow"></span>
+            <span class="correction"></span>
+        </div>
+        <div class="issue-buttons">
+            <div class="mdl2 mdl2-add"></div>
+        </div>
+    </div>
+
+    <!-- Template for Spelling IssueItem expanded content -->
+    <div id="spelling-issue-expanded-content-template" class="template">
+        <div class="extended-content-panel">
+            <div class="title-panel">
+                <span>Misspelled word:</span>
+                <span class="word"></span>
+            </div>
+            <div class="description-panel">
+                <span>The word</span>
+                <span class="word"></span>
+                <span>
+                    is not in our dictionary. If you're sure this spelling is correct,
+                    you can add it to your personal dictionary to prevent future alerts.
+                </span>
+            </div>
+        </div>
+        <div class="action-buttons">
+            <button>Add to dictionary</button>
+            <button>Ignore</button>
+        </div>
+    </div>
+
+    <!-- Template for Grammar IssueItem content -->
+    <div id="grammar-issue-content-template" class="template grammar-issue-content">
+        <div class="correction"></div>
+    </div>
+
+    <!-- Template for ConfusedWord IssueItem content -->
+    <div id="confused-word-issue-content-template" class="template confused-word-issue-content">
+        <div>Possibly confused word:</div>
+        <div class="confused-word"></div>
+    </div>
+
+    <!-- Template for PassiveVoice IssueItem content -->
+    <div id="passive-voice-issue-content-template" class="template passive-voice-issue-content">
+        <div>Passive voice</div>
+    </div>
+
+    <!-- Template for Suggestion IssueItem content -->
+    <div id="suggestion-issue-content-template" class="template suggestion-issue-content">
+        <div>
+            <div class="mistake"></div>
+            <div class="mdl2 mdl2-chrome-back-mirrored arrow"></div>
+            <div class="correction"></div>
+        </div>
+    </div>
+
+    <!-- Template for Punctuation IssueItem content -->
+    <div id="punctuation-issue-content-template" class="template punctuation-issue-content">
+        <div>
+            <div class="mistake"></div>
+            <div class="mdl2 mdl2-chrome-back-mirrored arrow"></div>
+            <div class="correction"></div>
+        </div>
+    </div>
+
+    <!-- Template for App Settings view -->
+    <div id="app-settings-template" class="template app-settings">
+        <div class="shadow-panel"></div>
+        <div class="content-panel">
+            <div class="logo-image">
+                <img src="assets/gramma.png" />
+                <div>Gramma R.</div>
+            </div>
+            <div class="links">
+                <div class="home-link">
+                    <div class="mdl2 mdl2-home"></div>
+                    <div>My Gramma R.</div>
+                </div>
+                <div class="profile-link">
+                    <div class="mdl2 mdl2-contact"></div>
+                    <div>Profile</div>
+                </div>
+                <div class="premium-link">
+                    <div class="mdl2 mdl2-favorite-star"></div>
+                    <div>Premium</div>
+                </div>
+                <div class="logout-link">
+                    <div class="mdl2 mdl2-block-contact"></div>
+                    <div>
+                        <div>Log out</div>
+                        <div>Username</div>
+                    </div>
+                </div>
+                <div class="support-link">
+                    <div class="mdl2 mdl2-help"></div>
+                    <div>Support</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

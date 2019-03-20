@@ -1,0 +1,68 @@
+/*
+    Colors:
+    DeepSkyBlue: #04ACFB
+    Tomato: #FC5868
+    Beige: #F3E6E2
+    SteelBlue: #3B70AF
+    Salmon: #FB7D71
+*/
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI';
+    font-weight: lighter;
+    color: white;
+    font-size: 20px;
+}
+
+#splashscreen {
+    height: 100vh;
+    width: 100vw;
+    background: #3B70AF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+    #splashscreen .logo-image {
+        height: 100px;
+        width: 100px;
+    }
+
+#contentroot {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+#notification-popup.ms-MessageBanner {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    text-align: left;
+    height: inherit;
+    min-width: inherit;
+}
+
+#notification-popup .ms-MessageBanner-text {
+    margin: 0;
+    padding: 18px 15px;
+    min-width: inherit;
+}
+
+.template, .hidden {
+    display: none !important;
+}
+
+.collapsed {
+    display: none !important;
+}

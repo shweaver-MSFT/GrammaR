@@ -1,0 +1,156 @@
+﻿/*
+    Colors:
+    DeepSkyBlue: #04ACFB
+    Tomato: #FC5868
+    Beige: #F3E6E2
+    SteelBlue: #3B70AF
+    Salmon: #FB7D71
+*/
+
+.first-run {
+    background-color: #3B70AF; /*#FB7D71;*/
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+    .first-run .scroll-panel {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        width: 100vw; /*calc(100vw + 17px);*/
+        height: 100vh;
+    }
+
+    .first-run .scroll-panel > div {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        text-align: justify;
+        max-width: 380px;
+        padding: 24px 12px;
+        margin: 0 auto;
+
+        overflow-y: visible;
+        overflow-x: hidden;
+    }
+
+    .first-run button {
+        font-size: 20px;
+        color: white;
+        border: none;
+        line-height: 100%;
+        cursor: pointer;
+    }
+
+    .first-run .skip-panel {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+        .first-run .skip-panel .skip-button {
+            width: auto;
+            background: none;
+            display: flex;
+            align-items: center;
+            padding: 0;
+        }
+
+            .first-run .skip-panel .skip-button:hover {
+                color: #F3E6E2 !important;
+            }
+
+            .first-run .skip-panel .skip-button > div {
+                display: flex;
+            }
+
+            .first-run .skip-panel .skip-button .next-icon {
+                margin-left: 12px;
+            }
+
+    .first-run .logo-panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+        font-size: 24px;
+    }
+
+        .first-run .logo-panel div {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            margin-left: 8px;
+        }
+
+        .first-run .logo-panel .logo-image {
+            height: 48px;
+            width: 48px;
+        }
+
+    .first-run .content-panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+    }
+
+        .first-run .content-panel .title {
+            width: 100%;
+            font-weight: normal;
+            font-size: 26px;
+        }
+
+        .first-run .content-panel .ux-image {
+            margin-top: 12px;
+            background: url(../../assets/ux-image.png);
+            background-position-x: center;
+            background-position-y: top;
+            background-repeat: no-repeat;
+            background-size: cover;
+            max-width: 340px;
+            width: 100%;
+            height: 300px;
+        }
+
+            .first-run .content-panel .ux-image > div {
+                height: 100%;
+                width: 100%;
+                background: linear-gradient(transparent 20%, #3B70AF 80%);
+            }
+
+        .first-run .content-panel .description {
+            font-size: 20px;
+            width: 100%;
+            margin-top: -64px;
+        }
+
+    .first-run .navigation-buttons {
+        display: flex;
+        flex-direction: row-reverse;
+        margin-top: 40px;
+    }
+
+        .first-run .navigation-buttons button {
+            background: #FB7D71;
+            width: 48px;
+            height: 48px;
+            font-size: 24px;
+        }
+
+            .first-run .navigation-buttons button:hover {
+                background: #FC5868 !important;
+            }
+
+        .first-run .navigation-buttons .next-button {
+            width: 148px;
+            margin-left: 12px;
+        }
+
+@media screen and (max-width: 480px) {
+
+    .first-run .logo-panel div {
+        flex-direction: column;
+        margin-left: 0;
+    }
+}

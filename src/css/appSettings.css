@@ -1,0 +1,79 @@
+﻿/*
+    Colors:
+    DeepSkyBlue: #04ACFB
+    Tomato: #FC5868
+    Beige: #F3E6E2
+    SteelBlue: #3B70AF
+    Salmon: #FB7D71
+*/
+
+.app-settings {
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    flex-direction: row-reverse;
+    top: 42px;
+    bottom: 48px;
+}
+
+.app-settings .shadow-panel {
+    background: transparent;
+}
+
+    .app-settings .content-panel {
+        background-color: #3B70AF;
+        color: white;
+        padding: 24px;
+        width: 400px;
+    }
+
+    .app-settings .content-panel .logo-image {
+        display: flex;
+        align-items: center;
+    }
+
+    .app-settings .content-panel .logo-image img {
+        height: 40px;
+        width: 40px;
+        margin-right: 12px;
+    }
+
+    .app-settings .content-panel .links {
+        margin-top: 48px;
+        margin-left: 10px;
+    }
+
+        .app-settings .content-panel .links > div {
+            display: flex;
+            flex-direction: row;
+            margin: 20px 0;
+            align-items: center;
+            cursor: pointer;
+        }
+
+            .app-settings .content-panel .links > div:hover {
+                color: #F3E6E2;
+            }
+
+        .app-settings .content-panel .links .mdl2 {
+            margin-right: 22px;
+        }
+
+        .app-settings .content-panel .links .home-link {
+        }
+
+    .app-settings .content-panel .links .profile-link {
+
+    }
+
+    .app-settings .content-panel .links .premium-link {
+
+    }
+
+    .app-settings .content-panel .links .logout-link {
+
+    }
+
+    .app-settings .content-panel .links .support-link {
+        margin-top: 56px;
+    }

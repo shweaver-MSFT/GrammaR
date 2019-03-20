@@ -1,0 +1,339 @@
+﻿/*
+    Colors:
+    DeepSkyBlue: #04ACFB
+    Tomato: #FC5868
+    Beige: #F3E6E2
+    SteelBlue: #3B70AF
+    Salmon: #FB7D71
+*/
+
+.issues {
+    width: 100vw;
+    height: 100vh;
+    background: url(../../assets/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+    .issues .header {
+        display: flex;
+        align-items: center;
+        border: 1px solid #04ACFB;
+        min-height: 40px;
+        font-size: 16px;
+        background-color: white;
+    }
+
+        .issues .header:hover {
+            cursor: pointer;
+        }
+
+        .issues .header .header-content {
+            display: flex;
+            flex-direction: row;
+            width: 100vw;
+            justify-content: space-between;
+        }
+
+        .issues .header .issue-counts {
+            margin-left: 16px;
+            display: flex;
+        }
+
+            .issues .header .issue-counts .issue-count {
+                display: flex;
+            }
+
+            .issues .header .issue-count-text {
+                margin-right: 12px;
+            }
+
+            .issues .header .issue-counts .critical-count {
+                margin-right: 8px;
+                background: #3B70AF;
+                border-radius: 50%;
+                width: 24px;
+                height: 24px;
+                display: flex;
+                justify-content: center;
+                color: white;
+            }
+
+            .issues .header .issue-counts .advanced-count {
+                margin-right: 8px;
+                background: #FC5868;
+                border-radius: 50%;
+                width: 24px;
+                height: 24px;
+                display: flex;
+                justify-content: center;
+                color: white;
+            }
+
+        .issues .header .scroll-nav {
+            margin-right: 6px;
+            display: flex;
+            flex-direction: row;
+        }
+
+            .issues .header .scroll-nav button {
+                background: none;
+                border: none;
+                padding: 0;
+                margin-right: 10px;
+            }
+
+            .issues .header .scroll-nav span {
+                border-radius: 50%;
+                border: 1px solid gray;
+                width: 20px;
+                height: 20px;
+                background: white;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                font-size: 12px;
+                color: gray;
+            }
+
+                .issues .header .scroll-nav span:hover {
+                    color: #3B70AF;
+                    border-color: #3B70AF;
+                }
+
+        .issues .header .expander-panel {
+            position: absolute;
+            height: 0;
+            margin-top: 48px;
+        }
+
+    .issues .issue-list {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        margin-right: 16px;
+        margin-bottom: 48px;
+    }
+
+    .issues .issue-list .issue-item {
+        margin: 0 14px;
+    }
+
+    .issues .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100vw;
+        background: #F3E6E2;
+        font-weight: normal;
+        display: flex;
+        border-top: 1px solid #04ACFB;
+    }
+
+    .issues .footer-content {
+        height: 48px;
+    }
+
+    .issues .footer img {
+        width: 40px;
+        height: 40px;
+        margin-right: 8px;
+    }
+
+        .issues .footer > div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 0 16px;
+            justify-content: space-between;
+            width: 100vw;
+        }
+
+            .issues .footer > div > div {
+                display: flex;
+                align-items: center;
+            }
+
+        .issues .footer .settings-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+            .issues .footer .settings-button:hover {
+                color: #3B70AF;
+            }
+
+        .issues .footer .accent {
+            color: #3B70AF;
+        }
+
+    .issues .issue-item .content-panel {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid gray;
+        height: 40px;
+        color: gray;
+        font-size: 16px;
+    }
+
+        .issues .issue-item .content-panel > div {
+            display: flex;
+            flex: 1;
+            align-items: center;
+        }
+
+    .issues .issue-item .content-panel .icon {
+        margin-right: 8px;
+    }
+
+    .issues .issue-item .content-panel .issue-content {
+        color: black;
+        flex: 1;
+    }
+
+    .issues .issue-item .content-panel .issue-content > div {
+        display: flex;
+    }
+
+    .issues .issue-item .content-panel .issue-buttons {
+        flex: 0;
+    }
+
+    .issues .issue-item .content-panel .issue-buttons > div {
+        margin-left: 8px;
+        height: 24px;
+        width: 24px;
+        display: inline-flex;
+        align-items: center;
+        color: gray;
+        font-size: 16px;
+        cursor: pointer;
+        justify-content: center;
+    }
+                .issues .issue-item .issue-buttons > div:hover {
+                    color: #3B70AF;
+                }
+
+        .issues .issue-item .issue-buttons .add {
+            
+        }
+
+        .issues .issue-item .issue-buttons .expand {
+        }
+
+        .issues .issue-item .issue-buttons .close {
+        }
+
+    .issues .issue-item .expander-panel {
+        display: inline-flex;
+    }
+
+        .issues .issue-item .expander-panel .extended-content-panel {
+            margin: 8px 24px;
+        }
+
+        .issues .issue-item .expander-panel .extended-content-panel .title-panel {
+            font-weight: bold;
+        }
+
+            .issues .issue-item .expander-panel .extended-content-panel .word {
+                font-style: italic;
+                font-weight: normal;
+            }
+
+        .issues .issue-item .expander-panel .action-buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            height: 40px;
+            border-top: 1px solid gray;
+        }
+
+            .issues .issue-item .expander-panel .action-buttons button {
+                background: none;
+                margin-left: 8px;
+                border: none;
+            }
+
+        .issues .issue-item .confused-word {
+            font-style: italic;
+            font-weight: normal;
+            margin: 0px 8px;
+        }
+
+        .issues .issue-item .spelling-issue-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .issues .issue-item .spelling-issue-content > div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            .issues .issue-item .arrow {
+                margin: 0 8px;
+                color: gray;
+                align-self: flex-end;
+            }
+
+            .issues .loader-panel {
+                display: flex;
+            }
+
+                .issues .loader-panel .loader {
+                    border: 2px solid transparent;
+                    border-top: 2px solid #04ACFB;
+                    border-radius: 50%;
+                    width: 38px;
+                    height: 38px;
+                    position: absolute;
+                    display: none;
+                    margin: -1px;
+                }
+
+                    .issues .loader-panel .loader.on {
+                        animation: spin 2s linear infinite;
+                        display: block;
+                    }
+
+.mistake {
+    text-decoration: line-through;
+    color: red;
+}
+
+.correction {
+    color: green;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .issues .header .issue-count-text {
+        display: none;
+    }
+}
+
