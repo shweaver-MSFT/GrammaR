@@ -94,7 +94,7 @@ Events:
 
             states.isWordAvailable = typeof Word !== 'undefined';
             if (!states.isWordAvailable) {
-                console.log("Warning: WordEventManager.js is loaded outside of Word");
+                console.log("Warning: WordDocumentManager.js is loaded outside of Word");
             }
 
             if (!options.interval || options.interval <= 0) {
@@ -112,7 +112,7 @@ Events:
                         }
                     }
                     catch (e) {
-                        console.log("Error: WordEventManager: " + e);
+                        console.log("Error: WordDocumentManager: " + e);
                         stop();
                     }
                 },

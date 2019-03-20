@@ -4,8 +4,8 @@
  */
 
 // The initialize function must be run each time a new page is loaded
-Office.initialize = reason => {
-
+Office.initialize = function (reason) {
+    
 };
 
 // Add any ui-less function here

@@ -10,15 +10,22 @@ window.App = new function () {
     var initialize = function () {
 
         // Initialize the FabricUI notification mechanism and hide it
-        var element = document.querySelector('.ms-MessageBanner');
-        messageBanner = new fabric.MessageBanner(element);
-        messageBanner.hideBanner();
-        if (messageBanner.classList) {
-            messageBanner.classList.remove("hidden");
+        try {
+            var element = document.querySelector('.ms-MessageBanner');
+            messageBanner = new fabric.MessageBanner(element);
+            messageBanner.hideBanner();
+            if (messageBanner.classList) {
+                messageBanner.classList.remove("hidden");
+            }
+        }
+        catch (e) {
+            // Failed to load message banner
         }
 
         var contentRoot = document.getElementById("contentroot");
-        contentRoot.classList.remove("hidden");
+        if (contentRoot && contentRoot.classList.contains("hidden")) {
+            contentRoot.classList.remove("hidden");
+        }
 
         navigate(App.Views.FirstRun);
     };
@@ -56,6 +63,10 @@ window.App = new function () {
 };
 
 // The initialize function must be run each time a new page is loaded.
-Office.initialize = function (reason) {
+Office.initialize = function (reason) {    
     App.initialize();
 };
+
+window.addEventListener('DOMContentLoaded', function (event) {
+    App.initialize();
+});

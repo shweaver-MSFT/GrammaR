@@ -412,88 +412,88 @@
     <!-- You can use resources across hosts and form factors. -->
     <Resources>
       <bt:Images>
-        <bt:Image id="StatusGroup.Icon_16x16" DefaultValue="https://localhost:3000/Images/Button16x16.png" />
-        <bt:Image id="StatusGroup.Icon_32x32" DefaultValue="https://localhost:3000/Images/Button32x32.png" />
-        <bt:Image id="StatusGroup.Icon_80x80" DefaultValue="https://localhost:3000/Images/Button80x80.png" />
+        <bt:Image id="StatusGroup.Icon_16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
+        <bt:Image id="StatusGroup.Icon_32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
+        <bt:Image id="StatusGroup.Icon_80x80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
 
-        <bt:Image id="TaskpaneButton.Icon_16x16" DefaultValue="https://localhost:3000/Images/Button16x16.png" />
-        <bt:Image id="TaskpaneButton.Icon_32x32" DefaultValue="https://localhost:3000/Images/Button32x32.png" />
-        <bt:Image id="TaskpaneButton.Icon_80x80" DefaultValue="https://localhost:3000/Images/Button80x80.png" />
+        <bt:Image id="TaskpaneButton.Icon_16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
+        <bt:Image id="TaskpaneButton.Icon_32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
+        <bt:Image id="TaskpaneButton.Icon_80x80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
 
-        <bt:Image id="IssuesGroup.Icon_16x16" DefaultValue="https://localhost:3000/Images/Button16x16.png" />
-        <bt:Image id="IssuesGroup.Icon_32x32" DefaultValue="https://localhost:3000/Images/Button32x32.png" />
-        <bt:Image id="IssuesGroup.Icon_80x80" DefaultValue="https://localhost:3000/Images/Button80x80.png" />
+        <bt:Image id="IssuesGroup.Icon_16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
+        <bt:Image id="IssuesGroup.Icon_32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
+        <bt:Image id="IssuesGroup.Icon_80x80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
 
-        <bt:Image id="SpellingButton.Icon_16x16" DefaultValue="https://localhost:3000/Images/Button16x16.png" />
-        <bt:Image id="SpellingButton.Icon_32x32" DefaultValue="https://localhost:3000/Images/Button32x32.png" />
-        <bt:Image id="SpellingButton.Icon_80x80" DefaultValue="https://localhost:3000/Images/Button80x80.png" />
+        <bt:Image id="SpellingButton.Icon_16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
+        <bt:Image id="SpellingButton.Icon_32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
+        <bt:Image id="SpellingButton.Icon_80x80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
 
-        <bt:Image id="GrammarButton.Icon_16x16" DefaultValue="https://localhost:3000/Images/Button16x16.png" />
-        <bt:Image id="GrammarButton.Icon_32x32" DefaultValue="https://localhost:3000/Images/Button32x32.png" />
-        <bt:Image id="GrammarButton.Icon_80x80" DefaultValue="https://localhost:3000/Images/Button80x80.png" />
+        <bt:Image id="GrammarButton.Icon_16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
+        <bt:Image id="GrammarButton.Icon_32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
+        <bt:Image id="GrammarButton.Icon_80x80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
 
-        <bt:Image id="PunctuationButton.Icon_16x16" DefaultValue="https://localhost:3000/Images/Button16x16.png" />
-        <bt:Image id="PunctuationButton.Icon_32x32" DefaultValue="https://localhost:3000/Images/Button32x32.png" />
-        <bt:Image id="PunctuationButton.Icon_80x80" DefaultValue="https://localhost:3000/Images/Button80x80.png" />
+        <bt:Image id="PunctuationButton.Icon_16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
+        <bt:Image id="PunctuationButton.Icon_32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
+        <bt:Image id="PunctuationButton.Icon_80x80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
 
-        <bt:Image id="StructureButton.Icon_16x16" DefaultValue="https://localhost:3000/Images/Button16x16.png" />
-        <bt:Image id="StructureButton.Icon_32x32" DefaultValue="https://localhost:3000/Images/Button32x32.png" />
-        <bt:Image id="StructureButton.Icon_80x80" DefaultValue="https://localhost:3000/Images/Button80x80.png" />
+        <bt:Image id="StructureButton.Icon_16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
+        <bt:Image id="StructureButton.Icon_32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
+        <bt:Image id="StructureButton.Icon_80x80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
 
-        <bt:Image id="StyleButton.Icon_16x16" DefaultValue="https://localhost:3000/Images/Button16x16.png" />
-        <bt:Image id="StyleButton.Icon_32x32" DefaultValue="https://localhost:3000/Images/Button32x32.png" />
-        <bt:Image id="StyleButton.Icon_80x80" DefaultValue="https://localhost:3000/Images/Button80x80.png" />
+        <bt:Image id="StyleButton.Icon_16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
+        <bt:Image id="StyleButton.Icon_32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
+        <bt:Image id="StyleButton.Icon_80x80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
 
-        <bt:Image id="PremiumGroup.Icon_16x16" DefaultValue="https://localhost:3000/Images/Button16x16.png" />
-        <bt:Image id="PremiumGroup.Icon_32x32" DefaultValue="https://localhost:3000/Images/Button32x32.png" />
-        <bt:Image id="PremiumGroup.Icon_80x80" DefaultValue="https://localhost:3000/Images/Button80x80.png" />
+        <bt:Image id="PremiumGroup.Icon_16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
+        <bt:Image id="PremiumGroup.Icon_32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
+        <bt:Image id="PremiumGroup.Icon_80x80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
 
-        <bt:Image id="AdvancedIssuesButton.Icon_16x16" DefaultValue="https://localhost:3000/Images/Button16x16.png" />
-        <bt:Image id="AdvancedIssuesButton.Icon_32x32" DefaultValue="https://localhost:3000/Images/Button32x32.png" />
-        <bt:Image id="AdvancedIssuesButton.Icon_80x80" DefaultValue="https://localhost:3000/Images/Button80x80.png" />
+        <bt:Image id="AdvancedIssuesButton.Icon_16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
+        <bt:Image id="AdvancedIssuesButton.Icon_32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
+        <bt:Image id="AdvancedIssuesButton.Icon_80x80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
 
-        <bt:Image id="GenreButton.Icon_16x16" DefaultValue="https://localhost:3000/Images/Button16x16.png" />
-        <bt:Image id="GenreButton.Icon_32x32" DefaultValue="https://localhost:3000/Images/Button32x32.png" />
-        <bt:Image id="GenreButton.Icon_80x80" DefaultValue="https://localhost:3000/Images/Button80x80.png" />
+        <bt:Image id="GenreButton.Icon_16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
+        <bt:Image id="GenreButton.Icon_32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
+        <bt:Image id="GenreButton.Icon_80x80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
 
-        <bt:Image id="VocabularyButton.Icon_16x16" DefaultValue="https://localhost:3000/Images/Button16x16.png" />
-        <bt:Image id="VocabularyButton.Icon_32x32" DefaultValue="https://localhost:3000/Images/Button32x32.png" />
-        <bt:Image id="VocabularyButton.Icon_80x80" DefaultValue="https://localhost:3000/Images/Button80x80.png" />
+        <bt:Image id="VocabularyButton.Icon_16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
+        <bt:Image id="VocabularyButton.Icon_32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
+        <bt:Image id="VocabularyButton.Icon_80x80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
 
-        <bt:Image id="PlagiarismButton.Icon_16x16" DefaultValue="https://localhost:3000/Images/Button16x16.png" />
-        <bt:Image id="PlagiarismButton.Icon_32x32" DefaultValue="https://localhost:3000/Images/Button32x32.png" />
-        <bt:Image id="PlagiarismButton.Icon_80x80" DefaultValue="https://localhost:3000/Images/Button80x80.png" />
+        <bt:Image id="PlagiarismButton.Icon_16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
+        <bt:Image id="PlagiarismButton.Icon_32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
+        <bt:Image id="PlagiarismButton.Icon_80x80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
 
-        <bt:Image id="SettingsGroup.Icon_16x16" DefaultValue="https://localhost:3000/Images/Button16x16.png" />
-        <bt:Image id="SettingsGroup.Icon_32x32" DefaultValue="https://localhost:3000/Images/Button32x32.png" />
-        <bt:Image id="SettingsGroup.Icon_80x80" DefaultValue="https://localhost:3000/Images/Button80x80.png" />
+        <bt:Image id="SettingsGroup.Icon_16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
+        <bt:Image id="SettingsGroup.Icon_32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
+        <bt:Image id="SettingsGroup.Icon_80x80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
 
-        <bt:Image id="LogOutButton.Icon_16x16" DefaultValue="https://localhost:3000/Images/Button16x16.png" />
-        <bt:Image id="LogOutButton.Icon_32x32" DefaultValue="https://localhost:3000/Images/Button32x32.png" />
-        <bt:Image id="LogOutButton.Icon_80x80" DefaultValue="https://localhost:3000/Images/Button80x80.png" />
+        <bt:Image id="LogOutButton.Icon_16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
+        <bt:Image id="LogOutButton.Icon_32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
+        <bt:Image id="LogOutButton.Icon_80x80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
 
-        <bt:Image id="SettingsButton.Icon_16x16" DefaultValue="https://localhost:3000/Images/Button16x16.png" />
-        <bt:Image id="SettingsButton.Icon_32x32" DefaultValue="https://localhost:3000/Images/Button32x32.png" />
-        <bt:Image id="SettingsButton.Icon_80x80" DefaultValue="https://localhost:3000/Images/Button80x80.png" />
+        <bt:Image id="SettingsButton.Icon_16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
+        <bt:Image id="SettingsButton.Icon_32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
+        <bt:Image id="SettingsButton.Icon_80x80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
 
-        <bt:Image id="AboutButton.Icon_16x16" DefaultValue="https://localhost:3000/Images/Button16x16.png" />
-        <bt:Image id="AboutButton.Icon_32x32" DefaultValue="https://localhost:3000/Images/Button32x32.png" />
-        <bt:Image id="AboutButton.Icon_80x80" DefaultValue="https://localhost:3000/Images/Button80x80.png" />
+        <bt:Image id="AboutButton.Icon_16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
+        <bt:Image id="AboutButton.Icon_32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
+        <bt:Image id="AboutButton.Icon_80x80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
 
-        <bt:Image id="HelpGroup.Icon_16x16" DefaultValue="https://localhost:3000/Images/Button16x16.png" />
-        <bt:Image id="HelpGroup.Icon_32x32" DefaultValue="https://localhost:3000/Images/Button32x32.png" />
-        <bt:Image id="HelpGroup.Icon_80x80" DefaultValue="https://localhost:3000/Images/Button80x80.png" />
+        <bt:Image id="HelpGroup.Icon_16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
+        <bt:Image id="HelpGroup.Icon_32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
+        <bt:Image id="HelpGroup.Icon_80x80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
 
-        <bt:Image id="OpenFaqButton.Icon_16x16" DefaultValue="https://localhost:3000/Images/Button16x16.png" />
-        <bt:Image id="OpenFaqButton.Icon_32x32" DefaultValue="https://localhost:3000/Images/Button32x32.png" />
-        <bt:Image id="OpenFaqButton.Icon_80x80" DefaultValue="https://localhost:3000/Images/Button80x80.png" />
+        <bt:Image id="OpenFaqButton.Icon_16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
+        <bt:Image id="OpenFaqButton.Icon_32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
+        <bt:Image id="OpenFaqButton.Icon_80x80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
 
-        <bt:Image id="ViewTourButton.Icon_16x16" DefaultValue="https://localhost:3000/Images/Button16x16.png" />
-        <bt:Image id="ViewTourButton.Icon_32x32" DefaultValue="https://localhost:3000/Images/Button32x32.png" />
-        <bt:Image id="ViewTourButton.Icon_80x80" DefaultValue="https://localhost:3000/Images/Button80x80.png" />
+        <bt:Image id="ViewTourButton.Icon_16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
+        <bt:Image id="ViewTourButton.Icon_32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
+        <bt:Image id="ViewTourButton.Icon_80x80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="DesktopFunctionFile.Url" DefaultValue="https://localhost:3000/Functions/FunctionFile.html" />
+        <bt:Url id="DesktopFunctionFile.Url" DefaultValue="https://localhost:3000/functions/function-file.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/index.html" />
         <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812" />
       </bt:Urls>
@@ -502,7 +502,7 @@
         <bt:String id="GetStarted.Title" DefaultValue="Get Started with Gramma R." />
         <bt:String id="Tab.Label" DefaultValue="Gramma R." />
         <bt:String id="TaskpaneButton.Label" DefaultValue="Open Gramma R." />
-        <bt:String id="StatusGroup.Label" DefaultValue="Status" />
+        <bt:String id="StatusGroup.Label" DefaultValue="TaskPane" />
         <bt:String id="IssuesGroup.Label" DefaultValue="Critical Issues" />
         <bt:String id="SpellingButton.Label" DefaultValue="Contextual Spelling" />
         <bt:String id="GrammarButton.Label" DefaultValue="Grammar" />
