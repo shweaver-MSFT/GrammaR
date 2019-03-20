@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        'functions': './functions/function-file.js'
+        'function-file': './functions/function-file.js'
     },
     module: {
         rules: [
@@ -29,7 +29,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './functions/function-file.html',
             filename: 'functions/function-file.html',
-            chunks: ['functions']
+            chunks: ['function-file']
         })
     ]
 };
