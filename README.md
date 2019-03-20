@@ -2,5 +2,8 @@
 
 ## Setup
 
+Sideload instructions:
+https://docs.microsoft.com/en-us/office/dev/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins
+
 How to setup SSL for HTTPS calls:
 https://github.com/OfficeDev/generator-office/blob/master/src/docs/ssl.md
