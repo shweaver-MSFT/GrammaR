@@ -16,69 +16,69 @@
             var navDownButton = view.querySelector(".scroll-nav .down-button");
             navDownButton.addEventListener("click", scrollDown);
 
-            /*
-            addSpellingIssue("partay", "party");
-            addPassiveVoiceIssue();
-            addConfusedWordIssue("PAX");
-            addPunctuationIssue("then;", "then,");
-            addGrammarIssue("Leger, Matisse,");
-            addPassiveVoiceIssue();
-            addConfusedWordIssue("foobar");
-            addSpellingIssue("partay", "party");
-            addPassiveVoiceIssue();
-            addConfusedWordIssue("PAX");
-            addPunctuationIssue("then;", "then,");
-            addGrammarIssue("Leger, Matisse,");
-            addPassiveVoiceIssue();
-            addConfusedWordIssue("foobar");
-            addSpellingIssue("partay", "party");
-            addPassiveVoiceIssue();
-            addConfusedWordIssue("PAX");
-            addPunctuationIssue("then;", "then,");
-            addGrammarIssue("Leger, Matisse,");
-            addPassiveVoiceIssue();
-            addConfusedWordIssue("foobar");
-            addSpellingIssue("partay", "party");
-            addPassiveVoiceIssue();
-            addConfusedWordIssue("PAX");
-            addPunctuationIssue("then;", "then,");
-            addGrammarIssue("Leger, Matisse,");
-            addPassiveVoiceIssue();
-            addConfusedWordIssue("foobar");
-            addSpellingIssue("partay", "party");
-            addPassiveVoiceIssue();
-            addConfusedWordIssue("PAX");
-            addPunctuationIssue("then;", "then,");
-            addGrammarIssue("Leger, Matisse,");
-            addPassiveVoiceIssue();
-            addConfusedWordIssue("foobar");
-            addSpellingIssue("partay", "party");
-            addPassiveVoiceIssue();
-            addConfusedWordIssue("PAX");
-            addPunctuationIssue("then;", "then,");
-            addGrammarIssue("Leger, Matisse,");
-            addPassiveVoiceIssue();
-            addConfusedWordIssue("foobar");
-            */
+            //for(var i = 0; i < 50; i++) {
+                //addPassiveVoiceIssue();
+            //}
 
             WordDocumentManager.addEventListener("documentChanged", function (e) {
-                App.showNotification("documentChanged", "documentChanged: " + e.detail.documentText);
+                //App.showNotification("documentChanged", "documentChanged: " + e.detail.documentText);
             });
 
             WordDocumentManager.addEventListener("documentCleared", function (e) {
-                App.showNotification("documentCleared", "documentCleared");
+                //App.showNotification("documentCleared", "documentCleared");
             });
 
             WordDocumentManager.addEventListener("selectionChanged", function (e) {
-                App.showNotification("selectionChanged", "selectionChanged: " + e.detail.selectionText);
+                //App.showNotification("selectionChanged", "selectionChanged: " + e.detail.selectionText);
             });
 
             WordDocumentManager.addEventListener("selectionCleared", function (e) {
-                App.showNotification("selectionCleared", "selectionCleared");
+                //App.showNotification("selectionCleared", "selectionCleared");
             });
 
             WordDocumentManager.addEventListener("wordSelected", function (e) {
-                App.showNotification("wordSelected", "wordSelected: " + e.detail.word);
+                //App.showNotification("wordSelected", "wordSelected: " + e.detail.word);
+
+                var bindingId = "binding_" + e.detail.word;
+
+                // Bind to the currently selected text in the document
+                Office.context.document.bindings.addFromSelectionAsync(Office.BindingType.Text, { id: bindingId }, function (asyncResult) {
+                    if (asyncResult.status !== Office.AsyncResultStatus.Succeeded)  return;
+                       
+                    var binding = asyncResult.value;
+
+                    // Create the new issue item view and set the binding id
+                    var issueView = addGrammarIssue(e.detail.word);
+                    issueView.id = binding.id;
+
+                    // Register binding handlers
+                    var onBindingDataChanged = function() {
+                        //App.showNotification("onBindingDataChanged: " + binding.id);
+                    };
+                    binding.addHandlerAsync(Office.EventType.BindingDataChanged, onBindingDataChanged);
+
+                    var onBindingSelectionChanged = function() {
+                        //App.showNotification("onBindingSelectionChanged: " + binding.id);
+                        scrollToIssue(binding.id);
+                    };
+                    binding.addHandlerAsync(Office.EventType.BindingSelectionChanged, onBindingSelectionChanged);
+
+                    // Click on close button
+                    // - Deregister event handlers
+                    // - Remove binding
+                    var close = issueView.querySelector(".close");
+                    close.addEventListener("click", function () {
+                        binding.removeHandlerAsync(Office.EventType.BindingDataChanged, onBindingDataChanged);
+                        binding.removeHandlerAsync(Office.EventType.BindingSelectionChanged, onBindingSelectionChanged);
+                        Office.context.document.bindings.releaseByIdAsync(binding.id);
+                    });
+                    
+                    // Click on content
+                    // - Focus on binding
+                    issueView.addEventListener("click", function () {
+                        Office.context.document.goToByIdAsync(binding.id, Office.GoToType.Binding);                          
+                    });
+                });
             });
 
             WordDocumentManager.options.interval = 300;
@@ -90,7 +90,7 @@
 
             // This bit of JS hides the scroll bar by pushing it out of the frame.
             var issueList = viewInstance.querySelector(".issue-list");
-            issueList.style.marginRight = issueList.clientWidth - issueList.offsetWidth + "px";
+            issueList.style.marginRight = issueList.offsetWidth - viewInstance.clientWidth + "px";
         };
 
         var toggleAppSettings = function () {
@@ -117,6 +117,12 @@
             }
         };
 
+        var scrollToIssue = function (issueId) {            
+            var issueList = viewInstance.querySelector(".issue-list");
+            var issue = issueList.querySelector("#" + issueId);
+            issueList.scrollTop = issue.offsetTop - issue.clientHeight;
+        }
+        
         var scrollUp = function () {
             var issueList = viewInstance.querySelector(".issue-list");
             issueList.scrollTop = 0;
@@ -124,7 +130,7 @@
 
         var scrollDown = function () {
             var issueList = viewInstance.querySelector(".issue-list");
-            issueList.scrollTop = issueList.clientHeight;
+            issueList.scrollTop = issueList.scrollHeight;
         };
 
         var addSpellingIssue = function (mistakeWord, correctionWord) {
@@ -169,7 +175,7 @@
             var correction = contentView.querySelector(".correction");
             correction.innerText = correctionWord;
 
-            addIssue(iconView, contentView);
+            return addIssue(iconView, contentView);
         };
 
         var addConfusedWordIssue = function (word) {
@@ -261,7 +267,11 @@
             if (viewInstance) {
                 var issueList = viewInstance.querySelector(".issue-list");
                 issueList.appendChild(itemView);
+
+                scrollDown();
             }
+
+            return itemView;
         };
 
         this.templateId = "issues-template";

@@ -37,10 +37,11 @@
             flex-direction: row;
             width: 100vw;
             justify-content: space-between;
+            padding: 0 18px;
         }
 
         .issues .header .issue-counts {
-            margin-left: 16px;
+            margin-left: 1px;
             display: flex;
         }
 
@@ -75,7 +76,7 @@
             }
 
         .issues .header .scroll-nav {
-            margin-right: 6px;
+            margin-right: 2px;
             display: flex;
             flex-direction: row;
         }
@@ -84,7 +85,7 @@
                 background: none;
                 border: none;
                 padding: 0;
-                margin-right: 10px;
+                margin-left: 8px;
             }
 
             .issues .header .scroll-nav span {
@@ -120,7 +121,7 @@
     }
 
     .issues .issue-list .issue-item {
-        margin: 0 14px;
+        margin: 0 12px;
     }
 
     .issues .footer {
@@ -186,16 +187,23 @@
         height: 40px;
         color: gray;
         font-size: 16px;
+        background-color: white;
+        padding: 0 8px;
     }
 
         .issues .issue-item .content-panel > div {
             display: flex;
-            flex: 1;
+            /*flex: 1;*/
             align-items: center;
         }
 
     .issues .issue-item .content-panel .icon {
         margin-right: 8px;
+        height: 24px;
+        width: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .issues .issue-item .content-panel .issue-content {
@@ -205,10 +213,7 @@
 
     .issues .issue-item .content-panel .issue-content > div {
         display: flex;
-    }
-
-    .issues .issue-item .content-panel .issue-buttons {
-        flex: 0;
+        width: 100vw;
     }
 
     .issues .issue-item .content-panel .issue-buttons > div {
