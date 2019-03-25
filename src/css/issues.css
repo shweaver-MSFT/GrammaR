@@ -325,6 +325,10 @@
     color: green;
 }
 
+.focused {
+    font-weight: bold;
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);

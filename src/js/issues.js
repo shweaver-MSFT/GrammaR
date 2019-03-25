@@ -3,9 +3,11 @@
     window.App.Views.Issues = function () {
 
         var viewInstance = null;
+        var issueBindings = null;
 
         var initialize = function (view) {
             viewInstance = view;
+            issueBindings = {};
 
             var settingsButton = view.querySelector(".settings-button");
             settingsButton.addEventListener("click", toggleAppSettings);
@@ -15,10 +17,6 @@
 
             var navDownButton = view.querySelector(".scroll-nav .down-button");
             navDownButton.addEventListener("click", scrollDown);
-
-            //for(var i = 0; i < 50; i++) {
-                //addPassiveVoiceIssue();
-            //}
 
             WordDocumentManager.addEventListener("documentChanged", function (e) {
                 //App.showNotification("documentChanged", "documentChanged: " + e.detail.documentText);
@@ -41,11 +39,14 @@
 
                 var bindingId = "binding_" + e.detail.word;
 
+                if (issueBindings[bindingId]) return;
+
                 // Bind to the currently selected text in the document
                 Office.context.document.bindings.addFromSelectionAsync(Office.BindingType.Text, { id: bindingId }, function (asyncResult) {
                     if (asyncResult.status !== Office.AsyncResultStatus.Succeeded)  return;
                        
                     var binding = asyncResult.value;
+                    issueBindings[binding.id] = binding;
 
                     // Create the new issue item view and set the binding id
                     var issueView = addGrammarIssue(e.detail.word);
@@ -60,6 +61,8 @@
                     var onBindingSelectionChanged = function() {
                         //App.showNotification("onBindingSelectionChanged: " + binding.id);
                         scrollToIssue(binding.id);
+                        unfocusAll();
+                        issueView.classList.add("focused");
                     };
                     binding.addHandlerAsync(Office.EventType.BindingSelectionChanged, onBindingSelectionChanged);
 
@@ -71,13 +74,19 @@
                         binding.removeHandlerAsync(Office.EventType.BindingDataChanged, onBindingDataChanged);
                         binding.removeHandlerAsync(Office.EventType.BindingSelectionChanged, onBindingSelectionChanged);
                         Office.context.document.bindings.releaseByIdAsync(binding.id);
+                        issueBindings[binding.id] = undefined;
                     });
                     
                     // Click on content
                     // - Focus on binding
                     issueView.addEventListener("click", function () {
-                        Office.context.document.goToByIdAsync(binding.id, Office.GoToType.Binding);                          
+                        Office.context.document.goToByIdAsync(binding.id, Office.GoToType.Binding);
+                        unfocusAll();
+                        issueView.classList.add("focused");
                     });
+
+                    unfocusAll();
+                    issueView.classList.add("focused");
                 });
             });
 
@@ -91,6 +100,16 @@
             // This bit of JS hides the scroll bar by pushing it out of the frame.
             var issueList = viewInstance.querySelector(".issue-list");
             issueList.style.marginRight = issueList.offsetWidth - viewInstance.clientWidth + "px";
+        };
+
+        var unfocusAll = function () {
+            var issueList = viewInstance.querySelector(".issue-list");
+            for(var i = 0; i < issueList.children.length; i++) {
+                var issue = issueList.children[i];
+                if (issue && issue.classList.contains("focused")) {
+                    issue.classList.remove("focused");
+                }
+            }
         };
 
         var toggleAppSettings = function () {
@@ -122,7 +141,7 @@
             var issue = issueList.querySelector("#" + issueId);
             issueList.scrollTop = issue.offsetTop - issue.clientHeight;
         }
-        
+
         var scrollUp = function () {
             var issueList = viewInstance.querySelector(".issue-list");
             issueList.scrollTop = 0;
