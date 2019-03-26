@@ -247,17 +247,21 @@
 
         var addIssue = function (iconView, issueContentView, expandedView) {
 
+            // Get the template, clone, and prep
             var itemTemplate = document.getElementById("issue-item-template");
             var itemView = itemTemplate.cloneNode(true);
             itemView.removeAttribute("id");
             itemView.classList.remove("template");
 
+            // Icon
             var icon = itemView.querySelector(".icon");
             icon.appendChild(iconView);
 
+            // Content
             var issueContent = itemView.querySelector(".issue-content");
             issueContent.appendChild(issueContentView);
 
+            // Expanded content (if any)
             var expand = itemView.querySelector(".expand");
             if (expandedView) {
                 var expanderPanel = itemView.querySelector(".expander-panel");
@@ -278,17 +282,22 @@
                 expand.classList.add("hidden");
             }
 
+            // Close button
             var close = itemView.querySelector(".close");
             close.addEventListener("click", function () {
                 this.parentNode.removeChild(this);
+                var criticalCount = viewInstance.querySelector(".issue-count .critical-count");
+                criticalCount.innerText = parseInt(criticalCount.innerText) - 1;
             }.bind(itemView));
 
-            if (viewInstance) {
-                var issueList = viewInstance.querySelector(".issue-list");
-                issueList.appendChild(itemView);
+            // Append issue to the list
+            var issueList = viewInstance.querySelector(".issue-list");
+            issueList.appendChild(itemView);
+            scrollDown();
 
-                scrollDown();
-            }
+            // Update the issue counter
+            var criticalCount = viewInstance.querySelector(".issue-count .critical-count");
+            criticalCount.innerText = parseInt(criticalCount.innerText) + 1;
 
             return itemView;
         };
