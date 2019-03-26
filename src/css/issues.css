@@ -193,7 +193,6 @@
 
         .issues .issue-item .content-panel > div {
             display: flex;
-            /*flex: 1;*/
             align-items: center;
         }
 
@@ -213,7 +212,6 @@
 
     .issues .issue-item .content-panel .issue-content > div {
         display: flex;
-        width: 100vw;
     }
 
     .issues .issue-item .content-panel .issue-buttons > div {
