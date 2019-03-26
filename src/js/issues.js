@@ -9,6 +9,9 @@
             viewInstance = view;
             issueBindings = {};
 
+            var header = view.querySelector(".header");
+            header.addEventListener("click", toggleIssueSettings)
+
             var settingsButton = view.querySelector(".settings-button");
             settingsButton.addEventListener("click", toggleAppSettings);
 
@@ -112,18 +115,51 @@
             }
         };
 
+        var toggleIssueSettings = function () {
+            var issueSettingsView = viewInstance.querySelector(".issue-settings");
+
+            // If the pane does not yet exist, create it.
+            if (!issueSettingsView) {
+
+                var view = new App.Views.IssueSettings();
+
+                var issueSettingsTemplate = document.getElementById(view.templateId);
+                issueSettingsView = issueSettingsTemplate.cloneNode(true);
+                issueSettingsView.removeAttribute("id");
+                issueSettingsView.classList.remove("template");
+
+                viewInstance.appendChild(issueSettingsView);
+
+                view.initialize(issueSettingsView);
+                return;
+            }
+
+            // Toggle the pane
+            if (issueSettingsView.classList.contains("collapsed")) {
+                issueSettingsView.classList.remove("collapsed");
+            }
+            else {
+                issueSettingsView.classList.add("collapsed");
+            }
+        };
+
         var toggleAppSettings = function () {
 
             var appSettingsView = viewInstance.querySelector(".app-settings");
 
             // If the pane does not yet exist, create it.
             if (!appSettingsView) {
-                var appSettingsTemplate = document.getElementById("app-settings-template");
+
+                var view = new App.Views.AppSettings();
+
+                var appSettingsTemplate = document.getElementById(view.templateId);
                 appSettingsView = appSettingsTemplate.cloneNode(true);
                 appSettingsView.removeAttribute("id");
                 appSettingsView.classList.remove("template");
 
                 viewInstance.appendChild(appSettingsView);
+
+                view.initialize(appSettingsView);
                 return;
             }
 

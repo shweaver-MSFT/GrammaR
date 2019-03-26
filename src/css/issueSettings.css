@@ -1,5 +1,95 @@
-﻿.issue-settings {
+﻿/*
+    Colors:
+    DeepSkyBlue: #04ACFB
+    Tomato: #FC5868
+    Beige: #F3E6E2
+    SteelBlue: #3B70AF
+    Salmon: #FB7D71
+*/
+
+.issue-settings {
     position: absolute;
-    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    top: 42px;
+    background: white;
+    border: 1px solid #04ACFB;
+    border-top: none;
+    width: calc(-2px + 100%);
+}
+
+.issue-settings .content-panel {
+    padding: 48px 12px 12px 12px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 -1px;
+}
+
+.issue-settings .content-panel .logo-image {
+    display: flex;
+    align-items: center;
+}
+
+.issue-settings .content-panel .logo-image img {
+    height: 40px;
+    width: 40px;
+    margin-right: 12px;
+}
+
+.issue-settings .content-panel .issues-panel {
+    margin: 24px 8px;
+    display: flex;
+}
+
+.issue-settings .content-panel .issues-panel .issue-panel {
+    display: flex;
+    align-items: center;
+}
+
+.issue-settings .content-panel .issues-panel .issue-count {
+    display: flex;
+    margin-right: 8px;
+    background: #FC5868;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+}
+
+.issue-settings .content-panel .issues-panel .issue-count .count {
+    align-self: center;
+    font-size: 16px;
+}
+
+.issue-settings .content-panel .premium-panel {
+    align-self: center;
+    text-align: center;
+    max-width: 348px;
+}
+
+.issue-settings .content-panel .premium-panel .premium-panel-text {
+}
+
+.issue-settings .content-panel .premium-panel .premium-button {
+    border-radius: 12px;
+    min-height: 24px;
+    width: auto;
+    background: #3B70AF;
+    color: white;
+    line-height: 100%;
+    margin-top: 12px;
+    font-variant: small-caps;
+    font-weight: bolder;
+}
+
+.issue-settings .content-panel .close-button {
+    margin-top: 40px;
+    align-self: center;
+    color: green;
+    cursor: pointer;
 }
 
