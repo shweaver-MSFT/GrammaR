@@ -286,8 +286,15 @@
             var close = itemView.querySelector(".close");
             close.addEventListener("click", function () {
                 this.parentNode.removeChild(this);
+
                 var criticalCount = viewInstance.querySelector(".issue-count .critical-count");
-                criticalCount.innerText = parseInt(criticalCount.innerText) - 1;
+                var count = parseInt(criticalCount.innerText) - 1;
+                criticalCount.innerText = count;
+
+                var emptyStatePanel = viewInstance.querySelector(".empty-state-panel");
+                if (count <= 0) {
+                    emptyStatePanel.classList.remove("hidden");
+                }
             }.bind(itemView));
 
             // Append issue to the list
@@ -298,6 +305,12 @@
             // Update the issue counter
             var criticalCount = viewInstance.querySelector(".issue-count .critical-count");
             criticalCount.innerText = parseInt(criticalCount.innerText) + 1;
+
+            // Hide the empty state panel
+            var emptyStatePanel = viewInstance.querySelector(".empty-state-panel");
+            if (!emptyStatePanel.classList.contains("hidden")) {
+                emptyStatePanel.classList.add("hidden");
+            }
 
             return itemView;
         };
