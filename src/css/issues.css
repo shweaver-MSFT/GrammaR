@@ -55,7 +55,7 @@
 
             .issues .header .issue-counts .critical-count {
                 margin-right: 8px;
-                background: #3B70AF;
+                background: #FC5868;
                 border-radius: 50%;
                 width: 24px;
                 height: 24px;
@@ -66,13 +66,17 @@
 
             .issues .header .issue-counts .advanced-count {
                 margin-right: 8px;
-                background: #FC5868;
+                background: #3B70AF;
                 border-radius: 50%;
                 width: 24px;
                 height: 24px;
                 display: flex;
                 justify-content: center;
                 color: white;
+            }
+
+            .issues .header .issue-counts .advanced.issue-count .issue-count-text {
+                color: #3B70AF;
             }
 
         .issues .header .scroll-nav {
