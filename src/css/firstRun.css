@@ -8,7 +8,7 @@
 */
 
 .first-run {
-    background-color: #3B70AF; /*#FB7D71;*/
+    background-color: #3B70AF;
     overflow: hidden;
     position: absolute;
     top: 0;
@@ -18,7 +18,7 @@
     .first-run .scroll-panel {
         overflow-y: scroll;
         overflow-x: hidden;
-        width: 100vw; /*calc(100vw + 17px);*/
+        width: 100vw;
         height: 100vh;
     }
 

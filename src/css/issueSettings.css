@@ -20,9 +20,14 @@
 
 .issue-settings .content-panel {
     padding: 48px 12px 12px 12px;
+    margin: 0 -1px;
+
+    
     display: flex;
     flex-direction: column;
-    margin: 0 -1px;
+    align-items: stretch;
+    align-self: center;
+    max-width: 380px;
 }
 
 .issue-settings .content-panel .logo-image {
@@ -39,6 +44,7 @@
 .issue-settings .content-panel .issues-panel {
     margin: 24px 8px;
     display: flex;
+    flex-direction: column;
 }
 
 .issue-settings .content-panel .issues-panel .issue-panel {
@@ -65,6 +71,22 @@
     font-size: 16px;
 }
 
+.issue-settings .content-panel .issues-panel > div {
+    display: flex;
+    justify-content: space-between; 
+    flex: 1;
+    margin-bottom: 12px;
+}
+
+.issue-settings .content-panel .issues-panel .toggle-panel {
+    display: flex;
+    align-items: center;
+}
+
+.issue-settings .content-panel .issues-panel .toggle-panel .toggle-switch {
+    margin-left: 8px;
+}
+
 .issue-settings .content-panel .premium-panel {
     align-self: center;
     text-align: center;
@@ -84,6 +106,7 @@
     margin-top: 12px;
     font-variant: small-caps;
     font-weight: bolder;
+    cursor: pointer;
 }
 
 .issue-settings .content-panel .close-button {
