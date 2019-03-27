@@ -45,6 +45,7 @@
     margin: 24px 8px;
     display: flex;
     flex-direction: column;
+    font-size: 18px;
 }
 
 .issue-settings .content-panel .issues-panel .issue-panel {

@@ -176,16 +176,19 @@
             var issueList = viewInstance.querySelector(".issue-list");
             var issue = issueList.querySelector("#" + issueId);
             issueList.scrollTop = issue.offsetTop - issue.clientHeight;
+            return false;
         }
 
-        var scrollUp = function () {
+        var scrollUp = function (e) {
             var issueList = viewInstance.querySelector(".issue-list");
             issueList.scrollTop = 0;
+            e.stopPropagation();
         };
 
-        var scrollDown = function () {
+        var scrollDown = function (e) {
             var issueList = viewInstance.querySelector(".issue-list");
             issueList.scrollTop = issueList.scrollHeight;
+            e.stopPropagation();
         };
 
         var addSpellingIssue = function (mistakeWord, correctionWord) {
