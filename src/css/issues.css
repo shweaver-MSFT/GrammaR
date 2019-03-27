@@ -159,6 +159,7 @@
         font-weight: normal;
         display: flex;
         border-top: 1px solid #04ACFB;
+        z-index: 2;
     }
 
     .issues .footer-content {

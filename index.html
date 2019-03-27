@@ -131,97 +131,100 @@
 
     <!-- Template for the IssueSettings view -->
     <div id="issue-settings-template" class="issue-settings template">
-        <div class="content-panel">
-            <div class="logo-image">
-                <img src="assets/gramma.png" />
-                <div>Critical Issues</div>
+        <div class="shadow-panel"></div>
+        <div class="alignment-panel">
+            <div class="content-panel">
+                <div class="logo-image">
+                    <img src="assets/gramma.png" />
+                    <div>Critical Issues</div>
+                </div>
+                <div class="issues-panel">
+                    <div class="spelling">
+                        <div class="issue-panel">
+                            <div class="issue-count">0</div>
+                            <div class="issue-count-text">Contextual spelling</div>
+                        </div>
+                        <div class="toggle-panel">
+                            <div class="toggle-text">OFF</div>
+                            <div class="toggle-switch">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grammar">
+                        <div class="issue-panel">
+                            <div class="issue-count">0</div>
+                            <div class="issue-count-text">Grammar</div>
+                        </div>
+                        <div class="toggle-panel">
+                            <div class="toggle-text">OFF</div>
+                            <div class="toggle-switch">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="punctuation">
+                        <div class="issue-panel">
+                            <div class="issue-count">0</div>
+                            <div class="issue-count-text">Punctuation</div>
+                        </div>
+                        <div class="toggle-panel">
+                            <div class="toggle-text">OFF</div>
+                            <div class="toggle-switch">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sentence-structure">
+                        <div class="issue-panel">
+                            <div class="issue-count">0</div>
+                            <div class="issue-count-text">Sentence structure</div>
+                        </div>
+                        <div class="toggle-panel">
+                            <div class="toggle-text">OFF</div>
+                            <div class="toggle-switch">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="style">
+                        <div class="issue-panel">
+                            <div class="issue-count">0</div>
+                            <div class="issue-count-text">Style</div>
+                        </div>
+                        <div class="toggle-panel">
+                            <div class="toggle-text">OFF</div>
+                            <div class="toggle-switch">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="premium-panel">
+                    <div class="premium-panel-text">
+                        Gramma R. Premium found additional writing issues in this text.
+                    </div>
+                    <div class="premium-button">
+                        go premium to enable advanced fixes
+                    </div>
+                </div>
+                <div class="mdl2 mdl2-scroll-chevron-up-legacy close-button"></div>
             </div>
-            <div class="issues-panel">
-                <div class="spelling">
-                    <div class="issue-panel">
-                        <div class="issue-count">0</div>
-                        <div class="issue-count-text">Contextual spelling</div>
-                    </div>
-                    <div class="toggle-panel">
-                        <div class="toggle-text">OFF</div>
-                        <div class="toggle-switch">
-                            <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                              </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="grammar">
-                    <div class="issue-panel">
-                        <div class="issue-count">0</div>
-                        <div class="issue-count-text">Grammar</div>
-                    </div>
-                    <div class="toggle-panel">
-                        <div class="toggle-text">OFF</div>
-                        <div class="toggle-switch">
-                            <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                              </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="punctuation">
-                    <div class="issue-panel">
-                        <div class="issue-count">0</div>
-                        <div class="issue-count-text">Punctuation</div>
-                    </div>
-                    <div class="toggle-panel">
-                        <div class="toggle-text">OFF</div>
-                        <div class="toggle-switch">
-                            <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                              </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="sentence-structure">
-                    <div class="issue-panel">
-                        <div class="issue-count">0</div>
-                        <div class="issue-count-text">Sentence structure</div>
-                    </div>
-                    <div class="toggle-panel">
-                        <div class="toggle-text">OFF</div>
-                        <div class="toggle-switch">
-                            <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                              </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="style">
-                    <div class="issue-panel">
-                        <div class="issue-count">0</div>
-                        <div class="issue-count-text">Style</div>
-                    </div>
-                    <div class="toggle-panel">
-                        <div class="toggle-text">OFF</div>
-                        <div class="toggle-switch">
-                            <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                              </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="premium-panel">
-                <div class="premium-panel-text">
-                    Gramma R. Premium found additional writing issues in this text.
-                </div>
-                <div class="premium-button">
-                    go premium to enable advanced fixes
-                </div>
-            </div>
-            <div class="mdl2 mdl2-scroll-chevron-up-legacy close-button"></div>
         </div>
     </div>
 
