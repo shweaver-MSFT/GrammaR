@@ -11,13 +11,17 @@
     position: absolute;
     width: 100vw;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     top: 42px;
     bottom: 48px;
+    z-index: 1;
 }
 
 .app-settings .shadow-panel {
-    background: transparent;
+    background: linear-gradient(0.25turn, transparent, black);
+    opacity: .5;
+    height: 100%;
+    flex: 1;
 }
 
     .app-settings .content-panel {
