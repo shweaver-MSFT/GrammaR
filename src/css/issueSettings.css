@@ -88,6 +88,8 @@
     justify-content: space-between; 
     flex: 1;
     margin-bottom: 12px;
+    /*margin: 20px 0;*/
+    min-height: 24px;
 }
 
 .issue-settings .content-panel .issues-panel .toggle-panel {
@@ -131,6 +133,6 @@
 .issue-settings .shadow-panel {
     background: linear-gradient(#d9d9d9, white 48px);
     opacity: .8;
-    height: 100%;
+    flex: 1;
     width: 100vw;
 }
