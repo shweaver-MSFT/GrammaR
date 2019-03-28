@@ -1,4 +1,14 @@
 # Gramma R. Office Word Web Add-In
+ * [Screenshots](#screenshots)
+ * [Setup](#setup)
+
+## Screenshots
+![first-run](assets/screenshots/first-run.PNG?raw=true")
+![no-issues](assets/screenshots/no-issues.PNG?raw=true")
+![issues](assets/screenshots/issues.PNG?raw=true")
+![issue-settings](assets/screenshots/issue-settings.PNG?raw=true")
+![app-settings](assets/screenshots/app-settings.PNG?raw=true")
+![custom-tab](assets/screenshots/custom-tab.PNG?raw=true")
 
 ## Setup
 
